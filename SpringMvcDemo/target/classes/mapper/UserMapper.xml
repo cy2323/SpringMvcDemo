@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.UserDao">
+
+	<resultMap type="com.test.entity.UserEntity" id="userEntity">
+		<id property="UId" column="uId" />
+		<result property="UName" column="uName" />
+		<result property="UPassword" column="uPassword" />
+		<result property="URegisterDate" column="uRegisterDate" />
+	</resultMap>
+
+	<select id="queryUserInfo" resultType="userEntity">
+		SELECT
+		a.UId,
+		a.UName,
+		a.UPassword,
+		a.URegisterDate
+		FROM
+		user_tbl a
+		WHERE
+		a.UName = #{uName}
+		AND a.UPassword = #{uPassword}
+	</select>
+</mapper>
