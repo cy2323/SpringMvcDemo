@@ -1,3 +1,6 @@
+/**
+ * UserDao Test
+ */
 package com.test.dao;
 
 import java.util.List;
